@@ -1,0 +1,15 @@
+{
+  "name": "Weather-Glimpse",
+  "version": "0.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "semantic-ui": "^2.2.6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Danyal Soharwardi",
+  "license": "BSD-2-Clause"
+}
