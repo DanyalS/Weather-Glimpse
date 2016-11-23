@@ -18,16 +18,19 @@
     <div class="container">
 
       <div id="search-city">
-        <div class="ui icon input">
-          <input id="cityName" type="text" placeholder="Enter City">
+        <div class="ui search">
+          <div class="ui icon input">
+            <input class="prompt" id="city-name" type="text" placeholder="Enter City" style='text-transform:uppercase'>
+            <i class="search icon"></i>
+          </div>
         </div>
-
-        <button id="search" class="ui button" onpress="getWeather()">Find</button>
 
         <div class="weather info">
           <h1 id="temp"></h1>
-          <p id="city"></p>
-          <p id="weather-main"></p><p id="weather-description"></p>
+          <h3 id="temp-min"></h3>
+          <h3 id="temp-max"></h3>
+          <p id="weather-main"></p>
+          <p id="weather-description"></p>
         </div>
      </div>
 

@@ -1,26 +1,29 @@
-var url = "http://api.openweathermap.org/data/2.5/weather?q=";
-var apiKey = "&APPID=9beb7211705e0858e94dcd5438f8972b";
-var unitsCelcius = "&units=metric";
-var unitsFahrenheit = "&units=imperial";
+$(document).ready(function () {
+  $("#city-name").keypress(function (event) {
 
-var url = url + cityName.value() + apiKey + unitsCelcius;
+    if (event.keyCode == 13) {
 
-var weather = new XMLHttpRequest();
-weather.open("GET", url, false);
-weather.send(null);
+      var api = "http://api.openweathermap.org/data/2.5/weather?q=";
+      var apiKey = "&APPID=9beb7211705e0858e94dcd5438f8972b";
+      var unitsCelcius = "&units=metric";
+      var unitsFahrenheit = "&units=imperial";
 
-var r = JSON.parse(weather.response);
+      var url = api + $("#city-name").val() + apiKey + unitsCelcius;
 
-var temp = r.main.temp;
-var city = r.name;
-var weatherMain = r.weather.main;
-var weatherDescription = r.weather.description;
+      jQuery.ajax ({
 
-function getWeather(id, res) {
-  document.getElementById(id).innerHTML = res;
-}
+        url: url,
+        dataType: "json",
+        success: function(response) {
+          $("#temp").html(response.main.temp);
+          $("#temp-min").html(response.main.temp_min);
+          $("#temp-max").html(response.main.temp_max);
+          $("#weather-main").html(response.weather.main);
+          $("#weather-description").html(response.weather.description);
+        }
 
-getWeather("temp", temp);
-getWeather("city", city);
-getWeather("weather-main", weatherMain);
-getWeather("weather-description", weatherDescription);
+      });
+
+    }
+  });
+});
