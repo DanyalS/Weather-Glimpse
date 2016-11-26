@@ -1,0 +1,20 @@
+.container {
+  width: 500px;
+  height: 350px;
+  padding: 10px 10px 10px 10px;
+}
+
+.ui.search {
+  margin: auto;
+  text-align: center;
+}
+
+#weather-info {
+  position: relative;
+  top: 215px;
+  margin-left: 10px;
+}
+
+p {
+  float: left;
+}
