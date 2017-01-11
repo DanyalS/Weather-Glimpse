@@ -28,10 +28,11 @@ $(document).ready(function() {
         dataType: "json",
         success: function(response) {
           $("#temp").html(Math.round(response.main.temp) + "&#186 C");
-          $("#temp-min").html("&#x2193 " + response.main.temp_min + "&#186");
-          $("#temp-max").html("&#x2191 " + response.main.temp_max + "&#186");
+          $("#temp-min").html("&#x2193 " + response.main.temp_min + " &#186");
+          $("#temp-max").html("&#x2191 " + response.main.temp_max + " &#186");
           $("#weather-main").html(response.weather[0].main);
-          $("#weather-description").html(response.weather[0].description);
+          $("#weather-description").html(", " + response.weather[0].description);
+          // ("#weather-icon").attr("src", response.weather[0].icon);
 
           if (response.weather[0].main === "Clear") {
             $('body').css('backgroundImage', 'url(images/sunny.jpg)');

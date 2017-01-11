@@ -2,6 +2,10 @@ body {
   font-weight: bold;
 }
 
+p {
+  float: left;
+}
+
 .container {
   width: 500px;
   height: 350px;
@@ -16,7 +20,7 @@ body {
 
 #city-name {
   position: relative;
-  text-align: center;
+  float: left;
   text-transform: uppercase;
 }
 
@@ -35,8 +39,15 @@ body {
 #conditions {
   position: relative;
   float: right;
+  vertical-align: baseline;
 }
 
-p {
-  float: left;
+#weather-icon {
+  position: relative;
+  float: right;
+}
+
+#weather-main {
+  position: relative;
+
 }
