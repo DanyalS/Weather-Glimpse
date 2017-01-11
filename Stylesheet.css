@@ -1,18 +1,40 @@
+body {
+  font-weight: bold;
+}
+
 .container {
   width: 500px;
   height: 350px;
-  padding: 10px 10px 10px 10px;
+  padding: 15px 15px 15px 15px;
 }
 
 .ui.search {
   margin: auto;
   text-align: center;
+  float: right;
+}
+
+#city-name {
+  position: relative;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 #weather-info {
   position: relative;
   top: 215px;
   margin-left: 10px;
+  margin-right: 10px;
+}
+
+#temperatures {
+  position: relative;
+  float: left;
+}
+
+#conditions {
+  position: relative;
+  float: right;
 }
 
 p {
