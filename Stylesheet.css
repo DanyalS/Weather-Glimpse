@@ -18,6 +18,11 @@ p {
   float: right;
 }
 
+.info {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
 #city-name {
   position: relative;
   float: left;
@@ -44,10 +49,23 @@ p {
 
 #weather-icon {
   position: relative;
-  float: right;
+  float: left;
 }
 
 #weather-main {
   position: relative;
+}
 
+#settings-popup {
+  position: relative;
+  float: right;
+}
+
+#celcius-label {
+  margin-right: 15px;
+}
+
+#unit-toggle {
+  position: relative;
+  float: right;
 }

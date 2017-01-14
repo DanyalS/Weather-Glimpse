@@ -12,7 +12,10 @@ $(document).ready(function() {
 
   $("#city-name").keypress(function(event) {
 
+    // Triggers function when "Enter" key is pressed
     if (event.keyCode == 13) {
+
+      $("#city-name").blur();
 
       var api = "http://api.openweathermap.org/data/2.5/weather?q=";
       var city = $("#city-name").val();
@@ -20,7 +23,9 @@ $(document).ready(function() {
       var unitsCelcius = "&units=metric";
       var unitsFahrenheit = "&units=imperial";
 
-      var url = api + city + apiKey + unitsCelcius;
+      var tempUnit = unitsCelcius;
+
+      var url = api + city + apiKey + tempUnit;
 
       jQuery.ajax ({
 
@@ -28,11 +33,10 @@ $(document).ready(function() {
         dataType: "json",
         success: function(response) {
           $("#temp").html(Math.round(response.main.temp) + "&#186 C");
-          $("#temp-min").html("&#x2193 " + response.main.temp_min + " &#186");
-          $("#temp-max").html("&#x2191 " + response.main.temp_max + " &#186");
+          $("#temp-min").html("&#x2193" + response.main.temp_min + "&#186");
+          $("#temp-max").html("&#x2191" + response.main.temp_max + "&#186");
           $("#weather-main").html(response.weather[0].main);
-          $("#weather-description").html(", " + response.weather[0].description);
-          // ("#weather-icon").attr("src", response.weather[0].icon);
+          $("#weather-icon").attr("src", "http://openweathermap.org/img/w/" + response.weather[0].icon + ".png");
 
           if (response.weather[0].main === "Clear") {
             $('body').css('backgroundImage', 'url(images/sunny.jpg)');
